@@ -8,4 +8,4 @@ Bus Schedule zip file permanent link: https://data.trilliumtransit.com/gtfs/ashe
 
 Transit Schedule site: https://www.ashevillenc.gov/service/transit-maps-schedules/
 
-AWS S3 bucket: https://us-east-1.console.aws.amazon.com/s3/object/avl-bus-schedule?region=us-east-1&bucketType=general
+AWS S3 bucket: https://us-east-1.console.aws.amazon.com/s3/buckets/avl-bus-schedule?region=us-east-1&bucketType=general&tab=objects
