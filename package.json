@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env src/local.js",
+    "start": "node src/local.js",
     "startpy": "python3 src/local.py",
     "clean": "rm -rf deploy/build && rm -rf node_modules/",
     "deploy": "cd deploy && node deploy.js",
@@ -17,6 +17,7 @@
     "yaml": "^2.4.2"
   },
   "dependencies": {
-    "is-port-reachable": "^4.0.0"
+    "@aws-sdk/client-s3": "^3.758.0",
+    "adm-zip": "^0.5.16"
   }
 }

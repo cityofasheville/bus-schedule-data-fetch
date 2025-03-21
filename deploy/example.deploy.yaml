@@ -1,7 +1,7 @@
 # Required Fields
 
-lambda_name: template           # Name of the production lambda. GitHub branch name will be added as a suffix for dev and feature branches
-description: 'Description for Lambda function'
+lambda_name: bus-schedule-data-fetch           # Name of the production lambda. GitHub branch name will be added as a suffix for dev and feature branches
+description: 'Downloads/extracts zip file of ART bus schedules and uploads to s3'
 region: us-east-1                # AWS region
 state_bucket: avl-tfstate-store  # S3 bucket to store terraform state
 nodejs_or_python: nodejs         # set to nodejs or python
@@ -11,7 +11,7 @@ lambda_options:                  # Enable access to AWS features. Must be 'true'
   lambda_url: 'false'
   secrets_manager: 'false'
   invoke_lambda: 'false'
-  s3: 'false'
+  s3: 'true'
   ses: 'false'
 sam_deploy: 'false'              # Only required if nodejs_or_python = python. 
 owner_tag: xxx@ashevilenc.gov    # Most tags are hardcoded, but change the coa:owner tag here
