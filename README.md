@@ -4,6 +4,8 @@ The comma-delimited files contain the city's bus schedule data and are loaded in
 
 The intention is to eventually display this data on the city website, as the current schedules are in pdf format.
 
+Bus Schedule zip file permanent link: https://data.trilliumtransit.com/gtfs/asheville-nc-us/asheville-nc-us.zip
+
 Transit Schedule site: https://www.ashevillenc.gov/service/transit-maps-schedules/
 
 AWS S3 bucket: https://us-east-1.console.aws.amazon.com/s3/object/avl-bus-schedule?region=us-east-1&bucketType=general
