@@ -72,15 +72,15 @@ async function sendToS3(filePath, s3Key, bucketName) {
 	};
 }
 
-async function uploadExtractedFilesToS3(extractPath,bucketName) {
+async function uploadExtractedFilesToS3(extractPath,bucketName,s3FolderPath) {
     const files = fs.readdirSync(extractPath);
   
     for (const file of files) {
         const filePath = path.join(extractPath, file);
-        const s3Key = file; // Use the original filename as the S3 key
+        const s3Key = s3FolderPath ? `${s3FolderPath}/${file}` : file;
         try {
             await sendToS3(filePath, s3Key, bucketName);
-            console.log(`Uploaded ${file} to S3.`);
+            console.log(`Uploaded ${file} to ${s3Key}.`);
         } catch {
             console.error(`${file} was not uploaded to S3.`);
         };
@@ -92,11 +92,12 @@ export const handler = async(event) => {
     const tempZipPath = '/tmp/temp-asheville-nc-us.zip';
     const extractPath = '/tmp/temp-extracted';
     const bucketName = 'avl-bus-schedule';
+    const s3FolderPath = 'gtfs'
 
     try {
         await downloadFile(fileUrl,tempZipPath);
         await extractZip(tempZipPath, extractPath);
-        await uploadExtractedFilesToS3(extractPath, bucketName);
+        await uploadExtractedFilesToS3(extractPath, bucketName,s3FolderPath);
 
         fs.unlinkSync(tempZipPath);
         fs.rmSync(extractPath, { recursive: true, force: true }); // Remove extracted folder
