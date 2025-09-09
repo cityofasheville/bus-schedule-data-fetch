@@ -91,7 +91,7 @@ export const handler = async(event) => {
     const fileUrl = 'https://data.trilliumtransit.com/gtfs/asheville-nc-us/asheville-nc-us.zip';
     const tempZipPath = '/tmp/temp-asheville-nc-us.zip';
     const extractPath = '/tmp/temp-extracted';
-    const bucketName = 'avl-bus-schedule';
+    const bucketName = 'bedrock-data-files';
     const s3FolderPath = 'gtfs'
 
     try {
