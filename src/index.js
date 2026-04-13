@@ -87,7 +87,7 @@ async function uploadExtractedFilesToS3(extractPath,bucketName,s3FolderPath) {
     };
   }
 
-export const handler = async(event) => {
+export async function handler(event, context) {
     const fileUrl = 'https://data.trilliumtransit.com/gtfs/asheville-nc-us/asheville-nc-us.zip';
     const tempZipPath = '/tmp/temp-asheville-nc-us.zip';
     const extractPath = '/tmp/temp-extracted';
